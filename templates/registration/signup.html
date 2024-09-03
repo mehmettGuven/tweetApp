@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="continer mx-auto my-4" style="width: 50%;">
+    <form method="POST" action="">
+        {% csrf_token %}
+
+        <div class="form-control p-4 d-flex flex-wrap">
+            {{form.as_p}}
+        </div>
+
+        <button style="width: 100%;" type="submit" class="btn btn-primary btn-lg btn-block mt-3" value="signup">Signup</button>
+    </form>
+</div>
+{% endblock %}
