@@ -26,17 +26,28 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{%url 'tweetapp:addtweet' %}">Add Tweet</a>
                     </li>
+                    <!--
                     <li class="nav-item">
                         <a class="nav-link" href="{%url 'tweetapp:addtweetbyform' %}">Add Tweet By Form</a>
                     </li><li class="nav-item">
                         <a class="nav-link" href="{%url 'tweetapp:addtweetbymodelform' %}">Add Tweet By Model Form</a>
+                    </li>
+                    -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <form method="post" action="{% url 'logout' %}?next=/">
+                            {% csrf_token %}
+                            <button type="submit" class="nav-link">Log Out</button>
+                        </form>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container container-fluid">
+    <div class="container container-fluid mb-5">
 
         {%block content%}
         
@@ -44,30 +55,12 @@
         
     </div>
     
-    <div class="container">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <div class="col-md-4 d-flex align-items-center">
-                <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-                    <svg class="bi" width="30" height="24">
-                        <use xlink:href="#bootstrap"></use>
-                    </svg>
-                </a>
-                <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Company, Inc</span>
-            </div>
-    
-            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24">
-                            <use xlink:href="#twitter"></use>
-                        </svg></a></li>
-                <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24">
-                            <use xlink:href="#instagram"></use>
-                        </svg></a></li>
-                <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24">
-                            <use xlink:href="#facebook"></use>
-                        </svg></a></li>
-            </ul>
-        </footer>
-    </div>
+    <footer class="d-flex fixed-bottom flex-wrap justify-content-between align-items-center py-3 mt-5 border-top">
+        <div class="col-md-4 offset-md-4 d-flex align-items-center">
+            <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Company, Inc</span>
+        </div>
+    </footer>
+
 
 
 
